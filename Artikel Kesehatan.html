@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel Kesehatan</title>
+<style>
+    /* Pengaturan Dasar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: turquoise;
+}
+
+/* Header & Tombol */
+.hero {
+    background-color: #007bff;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+.btn-janji {
+    display: inline-block;
+    background: #ffc107;
+    color: black;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Tata Letak Layanan */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.section-tittle {
+    text-align: center;
+    color: #007bff;
+}
+
+.layanan-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Testimoni */
+.testimoni {
+    background: #e2e2e2;
+    padding: 40px 20 px;
+    color: rgb(121, 111, 111);
+    text-align: center;
+}
+
+.testi-item {
+    background: rgb(214, 209, 175);
+    padding: 15px;
+    border-left: 5px solid #28a745;
+    margin-top: 10px;
+}
+                                                                                                    
+.testi-name{
+    display: block;
+    font-weight: bold;
+    color: #121312;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  
+  ul li {
+    float: left;
+    color: white;
+  }                                                                         
+  
+  ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  ul li a:hover {
+    background-color: #111111;
+  }
+.Tentangklinikkami {
+    text-align: center;
+}
+.sejarah {
+    text-align: center;
+
+}
+.ucapanselamat {
+    text-align: center;
+    
+}
+.sejarahkami{
+    text-align: center;
+}
+.layanan{
+    text-align: center;
+}
+footer{
+    padding: 10px;
+    margin-top: auto;
+}
+
+
+.blog-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.blog-card{
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover{
+    transform: translateY(-10px);
+}
+
+.blog-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #007bff;
+}
+
+.blog-conten{
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-tag{
+    color: #28a745;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.blog-content h3{
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.blog-content p{
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more{
+    margin-top: auto;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.read-more:hover{
+    text-decoration: underline;
+}
+
+.p{
+    font-size: larger;
+}
+
+</style>
+</head>
+<body>
+    
+    <header class="hero" style="background-color: lightblue; color: #333; border-bottom: 1px solid #ddd; padding: 40px 20px; text-align: center;">
+        <h1 style="color: #007bff; margin-bottom: 10px;">Pusat Edukasi Kesehatan</h1>
+        <p>5 Informasi Terpercaya untuk Hidup Lebih Sehat</p>
+        <center style="margin-top: 20px;">
+        <a href="index.html" class="btn-janji" style="text-decoration: none; padding: 10px 25px; background: #ffc107; color: #000; border-radius: 5px; font-weight: bold;">Kembali Ke Beranda</a>
+       </center>
+    </header>
+
+     <main class="blog-container">
+
+        <article class="blog-card">
+            <img src="foto/gigi-putih-dan-bersih.jpg" alt="Gigi Sehat">
+            <div class="blog-content">
+                <span class="category-tag">Gigi & Mulut</span>
+                <h3>1. Rahasia Gigi Agar Putih dan Bersih</h3>
+                <p>Kurangi konsumsi kopi, Menyikat gigi 2x sehari(pagi dan malam), Serta rutin melakukan scalling setiap 6 bulan sekali agar gigi tetap sehat</p>
+                <a href="#" class="read-more">Baca Selengkapnya</a>
+            </div>
+        </article>
+                
+            <article class="blog-card">
+                <img src="foto/vitalong.jpg" alt="Imun Tubuh">
+                <div class="blog-content">
+                    <span class="category-tag">Info Medis</span>
+                    <h3>2. Booster Imun Pada Saat Musim Hujan</h3>
+                    <p>Konsumsi Vitamin C,D,E dan Zinc, Istirahat yang cukup 7-8 jam, Jangan Lupa Olahraga yang Ringan-Ringan Aja, Dan segera mandi jika kehujanan yaa</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="foto/ganti-makanan-4-sehat-5-sempurna-dengan-pedoman-gizi-seimbang.jpg" alt="Gigi Anak">
+                    <div class="blog-content">
+                        <span class="category-tag">Keluarga</span>
+                        <h3>3. Berikan Gizi Seimbang Untuk Anak</h3>
+                        <p>Pastikan piring makan anaknya mengandung karbohidrat seperti nasi,roti,kentang,ubi, Protein seperti ayam,ikan dan telur, Dan jangan lupa sama sayur(bayam,wortel,brokoli) & buah(apel,pisang,jeruk,semangka)</p>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="foto/jantung.webp" alt="Jantung Sehat">
+                    <div class="blog-content">
+                        <span class="category-tag">Penyakit Dalam</span>
+                        <h3>4. Jaga Kesehatan Jantung Anda</h3>
+                        <p>Cara Menjaga Jantung Anda Agar Sehat adalah Kurangi konsumsi makanan bergizi rendah lemak jenuh/garam, Lakukan olahraga yang ringan seperti berjalan 30 menit supaya menajaga aliran darah tetap lancar, Berhenti merokok, Dan menjaga berat badan ideal</p>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="foto/kelola stress.jpg" alt="Mengatur Stress">
+                    <div class="blog-content">
+                        <span class="category-tag">Gaya Hidup</span>
+                        <h3>5. Kelola Stress dengan Benar</h3>
+                        <p>cara untuk mengelola stres sebenarnya ada banyak, tetapi kunci utamanya adalah bagaimana kamu bersedia menerima masalah sebagai bagian dari hidup. Kamu juga perlu menerima bahwa ada hal-hal yang tidak bisa diubah dan berada di luar kendali kamu. Dalam menghadapi berbagai permasalahan yang muncul dalam hidup, alih-alih merasa stres atau takut, kamu bisa menjadikan hal itu sebagai pengalaman untuk menjadi lebih baik lagi. 
+
+                            Berikut beberapa tips yang bisa kamu lakukan saat stres muncul: Makan-Makanan Sehat, Berolahraga, Beristirahat Sejenak, Bicarakan Masalahmu, Hindari Rokok & Minuman Beralkohol </p>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="foto/imunisasi.jpg" alt="Mengatur Stress">
+                    <div class="blog-content">
+                        <span class="category-tag">Ibu & Anak</span>
+                        <h3>6. Pentingnya Imunisasi Dasar Lengkap </h3>
+                        <p>Imunisasi dasar lengkap adalah
+                            rangkaian vaksinasi wajib yang diberikan pada bayi usia 0-11 bulan untuk melindungi dari penyakit menular berbahaya seperti TBC, Hepatitis B, Polio, Difteri, Pertusis, Tetanus, Hib, Campak, Rubela, Pneumonia, dan diare berat. Program ini krusial untuk membangun kekebalan awal dan disarankan dilakukan di puskesmas/posyandu. 
+                          
+                            Jadwal & Jenis Imunisasi Dasar Lengkap (Usia 0-11 Bulan):
+                            
+                                < 24 Jam: Hepatitis B (HB-0).
+                                1 Bulan: BCG (TBC), Polio 1.
+                                2 Bulan: DPT-HB-Hib 1 (Difteri, Pertusis, Tetanus, Hepatitis B, HiB), Polio 2, Rotavirus 1, PCV 1.
+                                3 Bulan: DPT-HB-Hib 2, Polio 3, Rotavirus 2.
+                                4 Bulan: DPT-HB-Hib 3, Polio 4, IPV (Polio suntik), Rotavirus 3, PCV 2.
+                                9 Bulan: Campak-Rubela (MR). 
+                            
+                            Imunisasi Lanjutan:
+                            
+                                18 Bulan: DPT-HB-Hib lanjutan dan MR lanjutan. 
+                            
+                            Pastikan anak mendapatkan imunisasi secara lengkap dan tepat waktu. Reaksi seperti demam ringan atau nyeri di area suntikan adalah hal wajar yang menandakan tubuh sedang membentuk kekebalan. </p>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+     </main>
+
+
+     <footer>
+        <p>&copy; 2025 Klinik Kesehatan Harapan Jaya.</p>
+     </footer>
+</body>
+</html>

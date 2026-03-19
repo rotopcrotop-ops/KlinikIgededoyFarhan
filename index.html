@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title>Beranda - Klinik kesehatan</title>
+    <style>
+        /* Pengaturan Dasar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: turquoise;
+}
+
+/* Header & Tombol */
+.hero {
+    background-color: #007bff;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+.btn-janji {
+    display: inline-block;
+    background: #ffc107;
+    color: black;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Tata Letak Layanan */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.section-tittle {
+    text-align: center;
+    color: #007bff;
+}
+
+.layanan-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Testimoni */
+.testimoni {
+    background: #e2e2e2;
+    padding: 40px 20 px;
+    color: rgb(121, 111, 111);
+    text-align: center;
+}
+
+.testi-item {
+    background: pink;
+    padding: 15px;
+    border-left: 5px solid #28a745;
+    margin-top: 10px;
+}
+
+.testi-name{
+    display: block;
+    font-weight: bold;
+    color: #121312;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  
+  ul li {
+    float: left;
+    color: white;
+  }
+  
+  ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  ul li a:hover {
+    background-color: #111111;
+  }
+  li a.active{
+    color: gray;
+    background-color: #111111;
+  }
+.Tentangklinikkami {
+    text-align: center;
+}
+.sejarah {
+    text-align: center;
+
+}
+.ucapanselamat {
+    text-align: center;
+    
+}
+.sejarahkami{
+    text-align: center;
+}
+.layanan{
+    text-align: center;
+}
+footer{
+    padding: 10px;
+    margin-top: auto;
+}
+p {
+    font-size: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<header class="ucapanselamat">
+    <h1>Selamat Datang Di Klinik Kesehatan Harapan Jaya</h1>
+    <P>Pelayanan Medis Profesional Untuk Keluarga Anda</P>
+</header>
+    <ul>
+    <a href="profil.html" style="color: white;">Cek Profil Kami</a>
+    </ul>
+<ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="profil.html">Profil Klinik</a></li>
+              <li><a href="Layanan Utama A.html">Layanan Utama A</a></li>
+              <li><a href="Layanan Utama B.html">Layanan Utama B</a></li>
+              <li><a href="Daftar Dokter.html">Daftar Dokter</a></li>
+              <li><a href="Fasilitas Dan Teknologi.html">Fasilitas & Teknologi</a></li>
+              <li><a href="Artikel Kesehatan.html">Artikel Kesehatan</a></li>
+              <li><a href="Biaya.html">Biaya</a></li>
+              <li><a href="Kontak Dan Lokasi.html">Kontak & Lokasi</a></li>
+              <li><a href="about.asp">FAQ</a></li>
+
+</ul> 
+<section class="layanan">
+     <h2 class="section-title">Layanan Di Puskesmas Kami</h2>
+     <div class="layanan-grid">
+          <div class="card">
+            <h3>Pelayanan Kesehatan Umum</h3>
+            <p>Kesehatan Ibu, Anak, Dan Keluarga Berencana (KIA/KB)</p>
+        </div>
+        <div class="card">
+            <h3>Pelayanan Kesehatan Gigi</h3>
+            <p>Perawatan behel, cabut gigi, dan pembersihan karang gigi.</p>
+            </div>
+            <div class="card">
+                <h3>Medical Check-Up</h3>
+                <p>Cek darah, kolestrol, dan gula darah dengan hasil cepat.</p>
+         </div>
+         <div class="card">
+            <h3>Pelayanan Pencegahan</h3>
+            <p>Imunisasi/Vaksinasi, Konsultasi gizi & nutrisi anak, dan Edukasi kesehatan & penyuluhan</p>
+         </div>
+    </div>
+</section>
+
+<section class="testimoni">
+    <div class="container">
+        <h2 class="section-title">Apa kata dari pasien kami?</h2>
+        <div class="testi-item">
+                  "Pelayanannya sangat baik,ramah dan dokternya sangat detail menjelaskan kondisi saya."
+                  <span class="testi-name">- zyy</span>
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+</html>
