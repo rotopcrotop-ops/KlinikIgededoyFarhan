@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Klinik kesehatan</title>
+    <style>
+        /* Pengaturan Dasar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: turquoise;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background-color: #333333;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        /* Tombol hamburger */
+        .hamburger-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 14px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-right: 16px;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        /* Nama klinik di navbar */
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .navbar-brand span { color: #ffc107; }
+
+        /* ===== SIDEBAR MENU ===== */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .sidebar-overlay.aktif { display: block; }
+
+        .sidebar {
+            position: fixed;
+            top: 0; left: -280px;
+            width: 260px;
+            height: 100%;
+            background-color: #222;
+            z-index: 1001;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .sidebar.aktif { left: 0; }
+
+        /* Header sidebar */
+        .sidebar-header {
+            background-color: #007bff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Menu di sidebar */
+        .sidebar-menu {
+            list-style: none;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .sidebar-menu li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 13px 20px;
+            font-size: 0.92rem;
+            transition: background 0.2s, padding-left 0.2s;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .sidebar-menu li a:hover {
+            background-color: #007bff;
+            color: white;
+            padding-left: 28px;
+        }
+
+        .sidebar-menu li a.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .sidebar-menu li a .menu-icon {
+            font-size: 1.1rem;
+            min-width: 22px;
+            text-align: center;
+        }
+
+        /* Garis pemisah di sidebar */
+        .sidebar-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            margin: 8px 0;
+        }
+
+        /* ===== HEADER ===== */
+        .ucapanselamat {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 60px 20px 30px 20px;
+        }
+
+        .ucapanselamat h1 { margin-bottom: 10px; font-size: 1.8rem; }
+
+        .btn-janji {
+            display: inline-block;
+            background: #ffc107;
+            color: black;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn-janji:hover { background: #e0a800; }
+
+        /* ===== ISI ===== */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .layanan-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .testimoni {
+            background: #e2e2e2;
+            padding: 40px 20px;
+            color: rgb(121, 111, 111);
+            text-align: center;
+        }
+
+        .testi-item {
+            background: pink;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            margin-top: 10px;
+        }
+
+        .testi-name {
+            display: block;
+            font-weight: bold;
+            color: #121312;
+        }
+
+        .layanan { text-align: center; }
+
+        footer {
+            padding: 10px;
+            margin-top: auto;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        p { font-size: 20px; }
+    </style>
+</head>
+<body>
+
+    <!-- OVERLAY (background gelap saat menu buka) -->
+    <div class="sidebar-overlay" id="overlay" onclick="tutupMenu()"></div>
+
+    <!-- SIDEBAR MENU -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>🏥 Harapan Jaya</h3>
+            <button class="sidebar-close" onclick="tutupMenu()">✕</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html" class="active">
+                <span class="menu-icon">🏠</span> Home
+            </a></li>
+            <li><a href="profil.html">
+                <span class="menu-icon">🏥</span> Profil Klinik
+            </a></li>
+            <hr class="sidebar-divider">
+            <li><a href="Layanan Utama A.html">
+                <span class="menu-icon">🦷</span> Layanan Utama A
+            </a></li>
+            <li><a href="Layanan Utama B.html">
+                <span class="menu-icon">👶</span> Layanan Utama B
+            </a></li>
+            <li><a href="Daftar Dokter.html">
+                <span class="menu-icon">👨‍⚕️</span> Daftar Dokter
+            </a></li>
+            <li><a href="Fasilitas Dan Teknologi.html">
+                <span class="menu-icon">🏨</span> Fasilitas & Teknologi
+            </a></li>
+            <hr class="sidebar-divider">
+            <li><a href="Artikel Kesehatan.html">
+                <span class="menu-icon">📰</span> Artikel Kesehatan
+            </a></li>
+            <li><a href="Biaya.html">
+                <span class="menu-icon">💰</span> Biaya
+            </a></li>
+            <li><a href="Kontak Dan Lokasi.html">
+                <span class="menu-icon">📍</span> Kontak & Lokasi
+            </a></li>
+            <li><a href="FAQ.html">
+                <span class="menu-icon">❓</span> FAQ
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <button class="hamburger-btn" onclick="bukaMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="index.html" class="navbar-brand">
+            Klinik Kesehatan <span>Harapan Jaya</span>
+        </a>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="ucapanselamat">
+        <h1>Selamat Datang Di Klinik Kesehatan Harapan Jaya</h1>
+        <p>Pelayanan Medis Profesional Untuk Keluarga Anda</p>
+        <a href="profil.html" class="btn-janji">Cek Profil Kami</a>
+    </header>
+
+    <!-- LAYANAN -->
+    <section class="layanan">
+        <div class="container">
+            <h2 class="section-title">Layanan Di Puskesmas Kami</h2>
+            <div class="layanan-grid">
+                <div class="card">
+                    <h3>Pelayanan Kesehatan Umum</h3>
+                    <p>Kesehatan Ibu, Anak, Dan Keluarga Berencana (KIA/KB)</p>
+                </div>
+                <div class="card">
+                    <h3>Pelayanan Kesehatan Gigi</h3>
+                    <p>Perawatan behel, cabut gigi, dan pembersihan karang gigi.</p>
+                </div>
+                <div class="card">
+                    <h3>Medical Check-Up</h3>
+                    <p>Cek darah, kolestrol, dan gula darah dengan hasil cepat.</p>
+                </div>
+                <div class="card">
+                    <h3>Pelayanan Pencegahan</h3>
+                    <p>Imunisasi/Vaksinasi, Konsultasi gizi & nutrisi anak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="testimoni">
+        <div class="container">
+            <h2 class="section-title">Apa kata dari pasien kami?</h2>
+            <div class="testi-item">
+                "Pelayanannya sangat baik, ramah dan dokternya sangat detail menjelaskan kondisi saya."
+                <span class="testi-name">- zyy</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Klinik Kesehatan Harapan Jaya</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function bukaMenu() {
+            document.getElementById('sidebar').classList.add('aktif');
+            document.getElementById('overlay').classList.add('aktif');
+        }
+
+        function tutupMenu() {
+            document.getElementById('sidebar').classList.remove('aktif');
+            document.getElementById('overlay').classList.remove('aktif');
+        }
+
+        // Tutup menu kalau tekan ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') tutupMenu();
+        });
+    </script>
+
+</body>
+</html>
